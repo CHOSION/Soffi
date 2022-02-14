@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
+    
     let quotes = [
         Quote(contents: "강한 자가 이기는 것이 아니라, 이기는 자가 강한 것이다.", name: "프란츠 베켄바워"),
         Quote(contents: "뛰어난 킥은 하루만에 만들어지지 않는다. 수천 수만 번의 노력으로 탄생하는 것이다.", name: "데이비드 베컴"),
@@ -21,7 +22,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    // Action 함수
     @IBAction func tapQuoteGeneratorButton(_ sender: Any) {
         let random = Int(arc4random_uniform(5)) // 0~4사이의 난수를 생성
         let quote = quotes[random]
